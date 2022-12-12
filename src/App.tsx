@@ -6,6 +6,7 @@ import Footer from "./site/Footer";
 import NewComponent from "./NewComponent/NewComponent";
 
 function App() {
+
     const [students, setStudents] = useState([
             {id: 1, name: "James", age: 8},
             {id: 2, name: "Robert", age: 18},
