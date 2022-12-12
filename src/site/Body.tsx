@@ -1,9 +1,13 @@
 import React from 'react';
 
-const Body = () => {
+type BodyType={
+    titleForBody: string
+}
+
+const Body = (props:BodyType) => {
     return (
         <div>
-            Body
+            {props.titleForBody}
         </div>
     );
 };
