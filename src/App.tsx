@@ -1,43 +1,40 @@
-import React, {useState} from 'react';
+import React, {MouseEvent} from 'react';
 import './App.css';
-import Header from "./site/Header";
-import Body from "./site/Body";
-import Footer from "./site/Footer";
-import NewComponent from "./NewComponent/NewComponent";
+import {logDOM} from "@testing-library/react";
+
 
 function App() {
+    // const myFirstSubscriber = (event: MouseEvent<HTMLButtonElement>) => {
+    //     console.log("Hello Im Vasya")
+    // }
+    // const mySecondSubscriber = (event: MouseEvent<HTMLButtonElement>) => {
+    //     console.log("Hello Im Ivan")
+    // }
 
-    const [students, setStudents] = useState([
-            {id: 1, name: "James", age: 8},
-            {id: 2, name: "Robert", age: 18},
-            {id: 3, name: "John", age: 28},
-            {id: 4, name: "Michael", age: 38},
-            {id: 5, name: "William", age: 48},
-            {id: 6, name: "David", age: 58},
-            {id: 7, name: "Richard", age: 68},
-            {id: 8, name: "Joseph", age: 78},
-            {id: 9, name: "Thomas", age: 88},
-            {id: 10, name: "Charles", age: 98},
-            {id: 11, name: "Christopher", age: 100},
-            {id: 1, name: "James", age: 8},
-            {id: 2, name: "Robert", age: 18},
-            {id: 3, name: "John", age: 28},
-            {id: 4, name: "Michael", age: 38},
-            {id: 5, name: "William", age: 48},
-            {id: 6, name: "David", age: 58},
-            {id: 7, name: "Richard", age: 68},
-            {id: 8, name: "Joseph", age: 78},
-            {id: 9, name: "Thomas", age: 88},
-            {id: 10, name: "Charles", age: 98},
-            {id: 11, name: "Christopher", age: 100},
-        ]
-    )
+    // const onClickHandler = (name: string) => {
+    //     console.log(name)
+    // }
+
+    const foo1 = () => {
+        console.log(100200)
+        //ничего не передавать, но в консоле должн опоказаться 100200
+    }
+    const foo2 = (name: number) => {
+        //передать цифру 100200
+        console.log(name)
+    }
+
     return (
-        <div>
-            <NewComponent students={students}/>
-            <Header title={'NEW HEADER'}/>
-            <Body titleForBody={'NEW BODY'}/>
-            <Footer titleForFooter={"NEW FOOTER"}/>
+        <div className="App">
+            {/*<button onClick={(event) => (console.log("HELLO")}>MyYouTobeChanel-1*/}
+            {/*</button>*/}
+            {/*<button onClick={(event) => onClickHandler("Vasya")}>MyYouTobeChanel-1</button>*/}
+            {/*<button onClick={(event) => onClickHandler("Prohor")}>MyYouTobeChanel-2</button>*/}
+            {/*<button onClick={() => onClickHandler("some info")}>MyYouTobeChanel-3</button>*/}
+
+
+            <button onClick={foo1}>1</button>
+            <button onClick={(event)=> foo2(10002000)}>2</button>
         </div>
     );
 }
