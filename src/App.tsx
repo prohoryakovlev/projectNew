@@ -9,6 +9,7 @@ function App() {
         <div className="App">
             <Button name={"MyYouTobeChanel-1"}/>
             <Button name={"MyYouTobeChanel-2"}/>
+            <Button name={"Delete"}/>
         </div>
     );
 }
