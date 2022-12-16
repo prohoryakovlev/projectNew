@@ -1,6 +1,7 @@
 import React, {MouseEvent, useState} from 'react';
 import './App.css';
 
+type FilterType = 'All' | "Dollars" | "RUBLS"
 
 function App() {
     const [money, setMoney] = useState([
@@ -14,7 +15,7 @@ function App() {
         {banknots: 'RUBLS', value: 50, number: ' v1234567890'},
     ])
 
-    const [filter, setFilter] = useState("All")
+    const [filter, setFilter] = useState<FilterType>("All")
 
     let currentMoney = money
     if (filter === 'Dollars') {
@@ -24,7 +25,7 @@ function App() {
         currentMoney = money.filter((filteredMoney) => filteredMoney.banknots === 'RUBLS')
     }
 
-    const onClickFilterHandler = (nameButton: string) => {
+    const onClickFilterHandler = (nameButton: FilterType) => {
         setFilter(nameButton)
     }
 
